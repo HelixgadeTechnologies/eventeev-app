@@ -1,0 +1,20 @@
+/** @format */
+
+.AuthVerifyCard {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/Soft_light.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-color: #1b1818;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 464px;
+  min-height: 200px;
+  border-radius: 8px;
+  padding: 30px 40px;
+}

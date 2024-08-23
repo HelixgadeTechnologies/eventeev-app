@@ -1,1 +1,38 @@
 /** @format */
+.button_primary {
+  color: #ffffff;
+  background: #eb5017;
+}
+
+.button_primary_outline {
+  color: #eb5017;
+  border: 1px solid #eb5017;
+}
+
+.button_primary_light {
+  color: #344054;
+  border: 1.5px solid #d0d5dd;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-icon {
+  color: white; /* Set icon color to white */
+}
+
+.spinner svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
