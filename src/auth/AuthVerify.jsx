@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function AuthVerify() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     // Replace with your API endpoint
@@ -29,7 +29,7 @@ function AuthVerify() {
         setLoading(false);
       })
       .catch((error) => {
-        setError(error);
+        // setError(error);
         setLoading(false);
       });
   }, [location.pathname]);
