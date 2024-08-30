@@ -7,7 +7,7 @@ import style from "./style/Event.module.css";
 
 function Event() {
   return (
-    <div className={`${style.scroll} w-[80%] h-[100vh]  bg-slate-400`}>
+    <div className={`${style.scroll} w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
       <EventHeader />
       <div className={`mainPage m-4 rounded h-[85vh] bg-[#ffffff]`}>
         <div className="p-6">
