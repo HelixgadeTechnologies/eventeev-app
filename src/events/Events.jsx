@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import Sidebar from "./Sidebar";
 import search from "../assets/icon/Icon9.png";
@@ -11,15 +13,10 @@ const Events = () => {
         <div className="searchBar w-[1168px] h-[64px] py-[12px] bg-[#ffffff]">
           <div className="flex bg-[#f0f2f5] py-[12px] ml-[36px] w-[629px] h-[40px] gap-[8px]">
             <span className="self-center">
-              {" "}
-              <img
-                className="ml-[10px] "
-                src={search}
-                alt="The search icon"
-              />{" "}
+              <img className="ml-[10px] " src={search} alt="The search icon" />
             </span>
             <input
-              className="self-center bg-[#f0f2f5] w-[92px] h-[20px] border-none  placeholder:inter placeholder:text-slate-400  text-sm  "
+              className="self-center bg-[#f0f2f5] w-[92px] h-[20px] border-none  placeholder:inter placeholder:text-slate-400 text-sm  "
               type="search"
               name=""
               id=""
