@@ -9,7 +9,7 @@ import EventRoute from "./routes/EventRoute";
 function App() {
   return (
     <Routes>
-      <Route path="/*" element={<AuthRoute />} />
+      <Route path="/*" element={<EventRoute />} />
       <Route path="/auth/*" element={<AuthRoute />} />
       <Route path="/event/*" element={<EventRoute />} />
     </Routes>
