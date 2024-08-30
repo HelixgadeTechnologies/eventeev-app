@@ -58,6 +58,12 @@ function AuthLogin() {
         {
           email,
           password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
       );
       const token = response.data.token;
@@ -119,8 +125,7 @@ function AuthLogin() {
                     top: "50%",
                     transform: "translateY(-50%)",
                     cursor: "pointer",
-                  }}
-                >
+                  }}>
                   {passwordVisible ? <Eye width={20} /> : <EyeOff width={20} />}
                 </div>
               </div>
@@ -140,15 +145,12 @@ function AuthLogin() {
               </div>
             </div>
             <div className="mb-4">
-              <Link to="/events">
-                <button
-                  type="submit"
-                  className="button_primary"
-                  disabled={loading}
-                >
-                  {loading ? "Signing In..." : " Sign In"}
-                </button>
-              </Link>
+              <button
+                type="submit"
+                className="button_primary"
+                disabled={loading}>
+                {loading ? "Signing In..." : " Sign In"}
+              </button>
             </div>
 
             {error && <span style={{ color: "red" }}>{error}</span>}

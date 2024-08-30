@@ -61,6 +61,12 @@ function AuthOrgLogin() {
         {
           first_name: name,
           last_name: website,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
       );
       const token = response.data.token;

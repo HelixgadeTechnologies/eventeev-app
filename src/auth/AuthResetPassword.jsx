@@ -51,6 +51,12 @@ function AuthResetPassword() {
           email: location.pathname.split("/")[3],
           code: location.pathname.split("/")[4],
           password: password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
       );
       const token = response.data.token;

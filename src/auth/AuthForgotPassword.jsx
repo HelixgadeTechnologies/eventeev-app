@@ -42,6 +42,12 @@ function AuthForgotPassword() {
         {
           email,
           url: "https://domain.com/auth/reset-password",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
       );
       const token = response.data.token;

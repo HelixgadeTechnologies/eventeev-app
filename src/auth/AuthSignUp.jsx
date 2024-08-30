@@ -83,6 +83,12 @@ function AuthSignUp() {
           email: email,
           password: password,
           url: "https://domain.com/auth/register",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
       );
       const token = response.data.token;
