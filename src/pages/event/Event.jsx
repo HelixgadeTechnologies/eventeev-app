@@ -2,14 +2,11 @@
 
 import React from "react";
 import birthday from "../../assets/icon/birthday.png";
-import EventHeader from "./EventHeader";
-import style from "./style/Event.module.css";
 
 function Event() {
   return (
-    <div className={`${style.scroll} w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
-      <EventHeader />
-      <div className={`mainPage m-4 rounded h-[85vh] bg-[#ffffff]`}>
+    <div className={`w-[100%] h-[90vh] p-4`}>
+      <div className={`mainPage rounded h-[85vh] bg-[#ffffff]`}>
         <div className="p-6">
           <div className="mb-6">
             <h5>Welcome to GDG Port Harcourt</h5>
