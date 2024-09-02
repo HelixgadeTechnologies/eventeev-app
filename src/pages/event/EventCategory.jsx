@@ -2,7 +2,6 @@
 import React from "react";
 
 function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
-  console.log(step, handleNextStep, handlePrevStep, data);
   return (
     <div>
       <div className="mb-4">
