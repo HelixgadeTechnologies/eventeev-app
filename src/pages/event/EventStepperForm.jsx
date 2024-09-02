@@ -8,14 +8,10 @@ import EventReview from "./EventReview";
 
 function EventStepperForm({ currentStep, handleCurrentStep, data }) {
   const nextStep = () => {
-    console.log("Next", currentStep);
-    handleCurrentStep(
-      (prevStep) => Math.min(prevStep + 1, 3) // Fixed the boundary for step count
-    );
+    handleCurrentStep((prevStep) => Math.min(prevStep + 1, 3));
   };
 
   const prevStep = () => {
-    console.log("Back", currentStep);
     handleCurrentStep((prevStep) => Math.max(prevStep - 1, 0));
   };
 

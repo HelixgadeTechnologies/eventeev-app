@@ -7,7 +7,9 @@ import EventStepperLayout from "./EventStepperLayout";
 
 function EventLayout() {
   return (
-    <div className={`w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
+    <div
+      style={{ overflowY: "auto" }}
+      className={`w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
       <EventHeader />
       {/* <Event /> */}
       <EventStepperLayout />

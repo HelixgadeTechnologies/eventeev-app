@@ -19,14 +19,13 @@ function EventStepper({ currentStep, data }) {
                   }}>
                   {step.header}
                 </p>
-                <span
+                <small
                   className="truncate"
                   style={{
-                    fontSize: "0.9em",
                     color: currentStep === index ? "#475367" : "#667185",
                   }}>
                   {step.label}
-                </span>
+                </small>
               </>
             }
           />
