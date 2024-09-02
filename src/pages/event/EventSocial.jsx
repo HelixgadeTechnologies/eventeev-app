@@ -4,7 +4,7 @@ import React from "react";
 
 function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
   return (
-    <div>
+    <div className="flex flex-col justify-between w-[100%] h-[100%]">
       <div className="mb-4">
         <hr />
       </div>
