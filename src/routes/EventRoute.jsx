@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import EventLayout from "../pages/event/EventLayout";
+import EventShell from "../pages/event/EventShell";
 
 function EventRoute() {
   return (
     <Routes>
-      <Route path="dashboard" element={<EventLayout />} />
+      <Route path="dashboard" element={<EventShell />} />
       <Route path="" element={<Navigate to={"/event/dashboard"} replace />} />
     </Routes>
   );

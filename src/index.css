@@ -96,18 +96,19 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 p {
   padding: 0;
   margin: 0;
   font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 
 span {
   font-size: 14px;
   line-height: 20.3px;
-  text-align: center;
 }
 
 small {
@@ -121,5 +122,5 @@ small {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: #0059ff;
 }

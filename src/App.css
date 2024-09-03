@@ -11,7 +11,7 @@
 
 .button_primary_light {
   color: #344054;
-  border: 1.5px solid #d0d5dd;
+  border: 2px solid #d0d5dd;
 }
 
 .spinner {
@@ -35,4 +35,59 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+#RFS-StepperContainer {
+  padding: unset !important;
+}
+
+#RFS-Connector {
+  display: none !important;
+}
+
+.StepperContainer-0-2-1 {
+  flex-direction: column !important;
+}
+
+#RFS-StepContainer {
+  margin-bottom: 10px;
+  padding: 0 !important;
+}
+
+.StepMain-0-2-3 {
+  flex-direction: row !important;
+}
+
+#RFS-StepButton {
+  width: 0 !important;
+  height: 0 !important;
+  border: 1px solid #98a2b3 !important;
+  background: none !important;
+  padding: 20px !important;
+}
+
+.StepButtonContent-0-2-5 {
+  color: #98a2b3 !important;
+}
+
+#RFS-StepButton.active {
+  background: #f56630 !important;
+  border: none !important;
+}
+
+#RFS-StepButton span.active {
+  color: #ffffff !important;
+}
+
+.StepContainer-0-2-2 {
+  width: 100%;
+}
+
+#RFS-LabelContainer {
+  padding: 6px 10px;
+}
+
+#RFS-Label {
+  margin-top: 0;
+  text-align: left;
 }

@@ -1,14 +1,18 @@
 /** @format */
 
 import React from "react";
-import EventSidebar from "./EventSidebar";
-import Event from "./Event";
+import EventHeader from "./EventHeader";
+// import Event from "./Event";
+import EventStepperLayout from "./EventStepperLayout";
 
 function EventLayout() {
   return (
-    <div className="flex w-full">
-      <EventSidebar />
-      <Event />
+    <div
+      style={{ overflowY: "auto" }}
+      className={`w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
+      <EventHeader />
+      {/* <Event /> */}
+      <EventStepperLayout />
     </div>
   );
 }
