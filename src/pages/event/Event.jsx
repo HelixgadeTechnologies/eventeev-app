@@ -5,8 +5,7 @@ import birthday from "../../assets/icon/birthday.png";
 
 function Event() {
   return (
-    <div className={`${style.scroll} w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
-      <EventHeader />
+    <div className={` w-[100%] h-[90vh] p-4`}>
       <div className={`mainPage m-4 rounded h-[85vh] bg-[#ffffff]`}>
         <div className="p-6">
           <div className="mb-6">
