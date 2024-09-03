@@ -9,7 +9,7 @@ function Event() {
   return (
     <div className={`${style.scroll} w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
       <EventHeader />
-      <div className={`mainPage m-4 rounded h-[85vh] bg-[#ffffff]`}>
+      <div className={`mainPage m-4 rounded min-h-[85vh] bg-[#ffffff]`}>
         <div className="p-6">
           <div className="mb-6">
             <h5>Welcome to GDG Port Harcourt</h5>
@@ -18,7 +18,7 @@ function Event() {
             </span>
           </div>
           <hr className="bg-[#F0F2F5]" />
-          <div className="flex flex-col items-center h-[60vh]">
+          <div className="flex flex-col items-center min-h-[60vh]">
             <div className="mt-[151px] mb-[29px]">
               <img src={birthday} alt="" />
             </div>
