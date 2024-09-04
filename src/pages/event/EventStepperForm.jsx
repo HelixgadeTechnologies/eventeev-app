@@ -17,7 +17,8 @@ function EventStepperForm({ currentStep, handleCurrentStep, data }) {
 
   return (
     <div
-      className={`w-[540px] h-[80vh] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}>
+      className={`w-[540px] min-h-[85vh] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}
+    >
       {currentStep === 0 && (
         <EventCreate step={currentStep} handleNextStep={nextStep} data={data} />
       )}

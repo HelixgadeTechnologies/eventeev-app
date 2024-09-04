@@ -64,6 +64,17 @@ input {
   border-radius: 6px;
   border: 1px solid #d0d5dd;
   outline: none;
+  color: #98a2b3;
+}
+
+textarea {
+  padding: 16px;
+  gap: 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  outline: none;
+  color: #98a2b3;
+  resize: none;
 }
 
 input[type="radio"] {
@@ -82,6 +93,7 @@ label {
   font-size: 14px;
   font-weight: 500;
   line-height: 20.3px;
+  color: #475367;
 }
 
 button {
