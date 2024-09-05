@@ -60,10 +60,20 @@ input {
   width: 100%;
   height: 56px;
   padding: 16px;
-  gap: 12px;
   border-radius: 6px;
   border: 1px solid #d0d5dd;
   outline: none;
+  color: #98a2b3;
+}
+
+textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #d0d5dd;
+  outline: none;
+  color: #98a2b3;
+  resize: none;
 }
 
 input[type="radio"] {
@@ -82,6 +92,7 @@ label {
   font-size: 14px;
   font-weight: 500;
   line-height: 20.3px;
+  color: #475367;
 }
 
 button {
@@ -118,9 +129,9 @@ small {
 *::-webkit-scrollbar {
   width: 2px;
   height: 2px;
-  background-color: green;
+  background-color: rgb(216, 216, 216);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #0059ff;
+  background-color: #9c9c9c;
 }
