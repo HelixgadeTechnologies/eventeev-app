@@ -20,7 +20,7 @@ function EventCreate({ step, handleNextStep, data }) {
     <div className="flex flex-col justify-between w-[100%] h-[100%]">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-6 mt-4 text-center">
-          <h5 className="mb-2">Event Category</h5>
+          <h5 className="mb-2">Create a new Event</h5>
           <p className="text-[#8C94A6]">
             Fill out these details to create your event
           </p>
@@ -45,8 +45,7 @@ function EventCreate({ step, handleNextStep, data }) {
               {...register("eventDescription", { required: true })}
               placeholder="Enter text here..."
               aria-invalid={errors.eventDescription ? "true" : "false"}
-              rows={4}
-            ></textarea>
+              rows={4}></textarea>
 
             <p className="text-sm text-[#667185]">
               Keep this simple of 50 characters
@@ -144,8 +143,7 @@ function EventCreate({ step, handleNextStep, data }) {
           <button
             type="submit"
             disabled={step === data.length - 1}
-            className="button_primary w-[60%]"
-          >
+            className="button_primary w-[60%]">
             Next Step
           </button>
         </div>
