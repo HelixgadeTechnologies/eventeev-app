@@ -45,7 +45,8 @@ function EventCreate({ step, handleNextStep, data }) {
               {...register("eventDescription", { required: true })}
               placeholder="Enter text here..."
               aria-invalid={errors.eventDescription ? "true" : "false"}
-              rows={4}></textarea>
+              rows={4}
+            ></textarea>
 
             <p className="text-sm text-[#667185]">
               Keep this simple of 50 characters
@@ -143,7 +144,8 @@ function EventCreate({ step, handleNextStep, data }) {
           <button
             type="submit"
             disabled={step === data.length - 1}
-            className="button_primary w-[60%]">
+            className="button_primary w-[60%]"
+          >
             Next Step
           </button>
         </div>
