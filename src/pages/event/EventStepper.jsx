@@ -5,8 +5,7 @@ import { Stepper, Step } from "react-form-stepper";
 function EventStepper({ currentStep, data }) {
   return (
     <div
-      className={`w-[360px] h-[797px] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}
-    >
+      className={`w-[360px] min-h-[80vh] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}>
       <Stepper activeStep={currentStep}>
         {data.map((step, index) => (
           <Step
@@ -17,16 +16,14 @@ function EventStepper({ currentStep, data }) {
                   style={{
                     fontWeight: currentStep === index ? "bold" : "500",
                     color: currentStep === index ? "#101928" : "#101928",
-                  }}
-                >
+                  }}>
                   {step.header}
                 </p>
                 <small
                   className="truncate"
                   style={{
                     color: currentStep === index ? "#475367" : "#667185",
-                  }}
-                >
+                  }}>
                   {step.label}
                 </small>
               </>

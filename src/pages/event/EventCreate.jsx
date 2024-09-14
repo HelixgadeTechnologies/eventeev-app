@@ -4,18 +4,27 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import toggle from "../../assets/icon/toggle.svg";
 
-function EventCreate({ step, handleNextStep, data }) {
+function EventCreate({
+  step,
+  handleNextStep,
+  eventValue,
+  handleSetEventValue,
+  data,
+}) {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: eventValue,
+  });
 
   const onSubmit = (data) => {
     JSON.stringify(data);
-    console.log(data);
+    handleSetEventValue(data);
     handleNextStep();
   };
+
   return (
     <div className="flex flex-col justify-between w-[100%] h-[100%]">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -31,26 +40,26 @@ function EventCreate({ step, handleNextStep, data }) {
             <label htmlFor="Event Name">Event Name</label>
             <input
               type="text"
-              {...register("eventName", { required: true })}
+              {...register("title", { required: true })}
               placeholder="Enter Subject"
-              aria-invalid={errors.eventName ? "true" : "false"}
+              aria-invalid={errors.title ? "true" : "false"}
             />
-            {errors.eventName?.type === "required" && (
+            {errors.title?.type === "required" && (
               <span className="text-[red]">Event name is required</span>
             )}
           </div>
           <div className="mb-4">
             <label htmlFor="Event description">Event description</label>
             <textarea
-              {...register("eventDescription", { required: true })}
+              {...register("description", { required: true })}
               placeholder="Enter text here..."
-              aria-invalid={errors.eventDescription ? "true" : "false"}
+              aria-invalid={errors.description ? "true" : "false"}
               rows={4}></textarea>
 
             <p className="text-sm text-[#667185]">
               Keep this simple of 50 characters
             </p>
-            {errors.eventDescription?.type === "required" && (
+            {errors.description?.type === "required" && (
               <span className="text-[red]">Event description is required</span>
             )}
           </div>
@@ -61,14 +70,13 @@ function EventCreate({ step, handleNextStep, data }) {
             <label htmlFor="Event Start Date">Event Start Date</label>
             <input
               type="date"
-              {...register("eventStartDate", {
+              {...register("start_date", {
                 required: true,
                 maxLength: 20,
               })}
-              placeholder="01 September 2024"
-              aria-invalid={errors.eventStartDate ? "true" : "false"}
+              aria-invalid={errors.start_date ? "true" : "false"}
             />
-            {errors.eventStartDate?.type === "required" && (
+            {errors.start_date?.type === "required" && (
               <span className="text-[red]">Event Start Date is required</span>
             )}
           </div>
@@ -76,14 +84,13 @@ function EventCreate({ step, handleNextStep, data }) {
             <label htmlFor="Event End Date">Event End Date</label>
             <input
               type="date"
-              {...register("eventEndDate", {
+              {...register("end_date", {
                 required: true,
                 maxLength: 20,
               })}
-              placeholder="01 September 2024"
-              aria-invalid={errors.eventEndDate ? "true" : "false"}
+              aria-invalid={errors.end_date ? "true" : "false"}
             />
-            {errors.eventEndDate?.type === "required" && (
+            {errors.end_date?.type === "required" && (
               <span className="text-[red]">Event End Date is required</span>
             )}
           </div>
@@ -94,14 +101,14 @@ function EventCreate({ step, handleNextStep, data }) {
             <label htmlFor="Event Start Time">Event Start Time</label>
             <input
               type="time"
-              {...register("eventStartTime", {
+              {...register("start_time", {
                 required: true,
                 maxLength: 20,
               })}
               placeholder="01 September 2024"
-              aria-invalid={errors.eventStartTime ? "true" : "false"}
+              aria-invalid={errors.start_time ? "true" : "false"}
             />
-            {errors.eventStartTime?.type === "required" && (
+            {errors.start_time?.type === "required" && (
               <span className="text-[red]">Event Start Time is required</span>
             )}
           </div>
@@ -109,11 +116,11 @@ function EventCreate({ step, handleNextStep, data }) {
             <label htmlFor="Event End Time">Event End Time</label>
             <input
               type="time"
-              {...register("eventEndTime", { required: true, maxLength: 20 })}
+              {...register("end_time", { required: true, maxLength: 20 })}
               placeholder="01 September 2024"
-              aria-invalid={errors.eventEndTime ? "true" : "false"}
+              aria-invalid={errors.end_time ? "true" : "false"}
             />
-            {errors.eventEndTime?.type === "required" && (
+            {errors.end_time?.type === "required" && (
               <span className="text-[red]">Event End Time is required</span>
             )}
           </div>

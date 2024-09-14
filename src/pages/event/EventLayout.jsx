@@ -2,8 +2,7 @@
 
 import React from "react";
 import EventHeader from "./EventHeader";
-// import Event from "./Event";
-import EventStepperLayout from "./EventStepperLayout";
+import Event from "./Event";
 
 function EventLayout() {
   return (
@@ -11,8 +10,7 @@ function EventLayout() {
       style={{ overflowY: "auto" }}
       className={`w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
       <EventHeader />
-      {/* <Event /> */}
-      <EventStepperLayout />
+      <Event />
     </div>
   );
 }

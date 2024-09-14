@@ -1,12 +1,31 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import EventCreate from "./EventCreate";
 import EventCategory from "./EventCategory";
 import EventSocial from "./EventSocial";
 import EventReview from "./EventReview";
 
 function EventStepperForm({ currentStep, handleCurrentStep, data }) {
+  const [eventValue, setEventValue] = useState({
+    title: "",
+    description: "",
+    start_date: "",
+    end_date: "",
+    start_time: "",
+    end_time: "",
+    one_time_off: "",
+    thumbnail: "",
+    type: "",
+    location: "",
+    category: "",
+    website: "",
+    facebook_link: "",
+    instagram_link: "",
+    twitter_link: "",
+    once_per_customer: "",
+  });
+
   const nextStep = () => {
     handleCurrentStep((prevStep) => Math.min(prevStep + 1, 3));
   };
@@ -17,10 +36,15 @@ function EventStepperForm({ currentStep, handleCurrentStep, data }) {
 
   return (
     <div
-      className={`w-[540px] min-h-[85vh] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}
-    >
+      className={`w-[540px] min-h-[60vh] bg-[#ffffff] rounded-lg border flex flex-col justify-between p-6`}>
       {currentStep === 0 && (
-        <EventCreate step={currentStep} handleNextStep={nextStep} data={data} />
+        <EventCreate
+          step={currentStep}
+          handleNextStep={nextStep}
+          eventValue={eventValue}
+          handleSetEventValue={setEventValue}
+          data={data}
+        />
       )}
 
       {currentStep === 1 && (
@@ -28,6 +52,8 @@ function EventStepperForm({ currentStep, handleCurrentStep, data }) {
           step={currentStep}
           handleNextStep={nextStep}
           handlePrevStep={prevStep}
+          eventValue={eventValue}
+          handleSetEventValue={setEventValue}
           data={data}
         />
       )}
@@ -37,12 +63,18 @@ function EventStepperForm({ currentStep, handleCurrentStep, data }) {
           step={currentStep}
           handleNextStep={nextStep}
           handlePrevStep={prevStep}
+          eventValue={eventValue}
+          handleSetEventValue={setEventValue}
           data={data}
         />
       )}
 
       {currentStep === 3 && (
-        <EventReview step={currentStep} handlePrevStep={prevStep} data={data} />
+        <EventReview
+          step={currentStep}
+          handlePrevStep={prevStep}
+          eventValue={eventValue}
+        />
       )}
     </div>
   );

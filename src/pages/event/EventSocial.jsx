@@ -3,16 +3,25 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import toggle from "../../assets/icon/toggle.svg";
-function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
+function EventSocial({
+  step,
+  handleNextStep,
+  handlePrevStep,
+  eventValue,
+  handleSetEventValue,
+  data,
+}) {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: eventValue,
+  });
 
   const onSubmit = (data) => {
     JSON.stringify(data);
-    console.log(data);
+    handleSetEventValue(data);
     handleNextStep();
   };
   return (
@@ -30,11 +39,11 @@ function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
             <label htmlFor="Event Website">Event Website</label>
             <input
               type="text"
-              {...register("eventWebsite", { required: true })}
+              {...register("website", { required: true })}
               placeholder="WWW."
-              aria-invalid={errors.eventWebsite ? "true" : "false"}
+              aria-invalid={errors.website ? "true" : "false"}
             />
-            {errors.eventWebsite?.type === "required" && (
+            {errors.website?.type === "required" && (
               <span className="text-[red]">Event website is required</span>
             )}
           </div>
@@ -42,11 +51,11 @@ function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
             <label htmlFor="Event Facebook Link">Event Facebook Link</label>
             <input
               type="text"
-              {...register("eventFacebookLink", { required: true })}
+              {...register("facebook_link", { required: true })}
               placeholder="https://www.facebook.com/"
-              aria-invalid={errors.eventFacebookLink ? "true" : "false"}
+              aria-invalid={errors.facebook_link ? "true" : "false"}
             />
-            {errors.eventFacebookLink?.type === "required" && (
+            {errors.facebook_link?.type === "required" && (
               <span className="text-[red]">Facebook link is required</span>
             )}
           </div>
@@ -54,11 +63,11 @@ function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
             <label htmlFor="Event Instagram Link">Event Instagram Link</label>
             <input
               type="text"
-              {...register("eventInstagramLink", { required: true })}
+              {...register("instagram_link", { required: true })}
               placeholder="https://www.instagram.com/"
-              aria-invalid={errors.eventInstagramLink ? "true" : "false"}
+              aria-invalid={errors.instagram_link ? "true" : "false"}
             />
-            {errors.eventInstagramLink?.type === "required" && (
+            {errors.instagram_link?.type === "required" && (
               <span className="text-[red]">Instagram Link is required</span>
             )}
           </div>
@@ -68,11 +77,11 @@ function EventSocial({ step, handleNextStep, handlePrevStep, data }) {
             </label>
             <input
               type="text"
-              {...register("eventTwitterLink", { required: true })}
+              {...register("twitter_link", { required: true })}
               placeholder="https://x.com/"
-              aria-invalid={errors.eventTwitterLink ? "true" : "false"}
+              aria-invalid={errors.twitter_link ? "true" : "false"}
             />
-            {errors.eventTwitterLink?.type === "required" && (
+            {errors.twitter_link?.type === "required" && (
               <span className="text-[red]">Twitter link is required</span>
             )}
           </div>

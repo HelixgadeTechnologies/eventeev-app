@@ -1,21 +1,56 @@
 /** @format */
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import cloudy from "../../assets/icon/cloud.png";
 
-function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
+function EventCategory({
+  step,
+  handleNextStep,
+  handlePrevStep,
+  eventValue,
+  handleSetEventValue,
+  data,
+}) {
+  const [dragActive, setDragActive] = useState(false);
+
   const {
     register,
     formState: { errors },
+    setValue,
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: eventValue,
+  });
+
+  const handleDrag = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setValue("thumbnail", e.dataTransfer.files);
+    }
+  };
+
+  const handleChange = (e) => {
+    setValue("thumbnail", e.target.files);
+  };
 
   const onSubmit = (data) => {
     JSON.stringify(data);
-    console.log(data);
+    handleSetEventValue(data);
     handleNextStep();
   };
-  // you can use React.forwardRef to pass the ref too
+
   const Select = React.forwardRef(
     ({ onChange, onBlur, name, options }, ref) => (
       <select
@@ -43,10 +78,15 @@ function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
         </div>
 
         <div className="flex flex-col">
-          <div className="w-full text-center border-dashed border-2 py-5 px-6 mb-4">
-            <button className="spinner">
+          <div
+            className="relative w-full text-center border-dashed border-2 py-5 px-6 mb-4"
+            onDragEnter={handleDrag}
+            onDragOver={handleDrag}
+            onDragLeave={handleDrag}
+            onDrop={handleDrop}>
+            <div className="spinner">
               <img src={cloudy} alt="" />
-            </button>
+            </div>
             <div className="mt-4">
               <span className="text-[#EB5017] font-semibold">
                 Click to upload
@@ -56,24 +96,32 @@ function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
                 SVG, PNG, JPG or GIF (max. 800x400px)
               </small>
             </div>
-
             <div className="spinner py-[19px]">
               <hr className="w-1/2 " />
               <span className="text-[#98A2B3] font-semibold">OR</span>
               <hr className=" w-1/2" />
             </div>
             <div className="spinner">
-              <button className="button_primary w-1/2">Browse Files</button>
+              <button type="button" className="button_primary w-1/2">
+                {dragActive ? "Browse Files loading..." : "Browse Files "}
+              </button>
             </div>
+            <input
+              id="fileUpload"
+              type="file"
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              onChange={(e) => handleChange(e)} // Handle file change
+              accept=".svg, .png, .jpg, .gif"
+            />
           </div>
 
           <div className="mb-4">
             <label htmlFor="Event Type">Event Type</label>
             <Select
-              {...register("physicalEvent", { required: true })}
+              {...register("type", { required: true })}
               options={["Virtual", "Hybrid", "In-person"]}
             />
-            {errors.physicalEvent && (
+            {errors.type && (
               <span className="text-[red]">Event type is required</span>
             )}
           </div>
@@ -82,11 +130,11 @@ function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
             <label htmlFor="Event Location">Event Location</label>
             <input
               type="text"
-              {...register("eventLocation", { required: true })}
+              {...register("location", { required: true })}
               placeholder="Helix-Ace Event centre 123 helix Avenue, Port Harcourt, River state, Nigeria"
-              aria-invalid={errors.eventLocation ? "true" : "false"}
+              aria-invalid={errors.location ? "true" : "false"}
             />
-            {errors.eventLocation?.type === "required" && (
+            {errors.location?.type === "required" && (
               <span className="text-[red]">Event location is required</span>
             )}
           </div>
@@ -94,7 +142,7 @@ function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
           <div className="mb-4">
             <label htmlFor="Event Category"> Event Category</label>
             <Select
-              {...register("eventCategory", { required: true })}
+              {...register("category", { required: true })}
               options={[
                 "Conference",
                 "Info Session",
@@ -104,7 +152,7 @@ function EventCategory({ step, handleNextStep, handlePrevStep, data }) {
                 "Hackathon",
               ]}
             />
-            {errors.eventCategory && (
+            {errors.category && (
               <span className="text-[red]">Event category is required</span>
             )}
           </div>
