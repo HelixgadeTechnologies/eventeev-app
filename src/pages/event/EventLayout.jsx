@@ -8,7 +8,7 @@ function EventLayout() {
   return (
     <div
       style={{ overflowY: "auto" }}
-      className={`w-[80%] h-[100vh]  bg-[#F0F2F5]`}>
+      className={`w-[100%] h-[100vh] bg-[#F0F2F5]`}>
       <EventHeader />
       <Event />
     </div>

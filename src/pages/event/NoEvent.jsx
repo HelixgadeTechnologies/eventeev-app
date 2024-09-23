@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 function NoEvent() {
   return (
-    <div className={`w-[100%] h-[90vh] p-4`}>
-      <div className={`mainPage m-4 rounded h-[85vh] bg-[#ffffff]`}>
+    <div className={`w-[100%] h-[90vh] p-2`}>
+      <div className={`mainPage rounded h-[88vh] bg-[#ffffff]`}>
         <div className="p-6">
           <div className="mb-6">
             <h5>Welcome to GDG Port Harcourt</h5>
@@ -16,7 +16,7 @@ function NoEvent() {
             </span>
           </div>
           <hr className="bg-[#F0F2F5]" />
-          <div className="flex flex-col items-center min-h-[60vh]">
+          <div className="flex flex-col items-center min-h-[100%]">
             <div className="mt-[151px] mb-[29px]">
               <img src={birthday} alt="" />
             </div>

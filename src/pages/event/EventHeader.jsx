@@ -5,7 +5,7 @@ import search from "../../assets/icon/Icon9.png";
 
 function EventHeader() {
   return (
-    <div className="searchBar w-[100%] h-[10vh] py-[12px] bg-[#ffffff]">
+    <div className="searchBar w-[100%] h-[10vh] py-[12px] bg-[#ffffff] flex flex-row items-center">
       <div className="flex bg-[#f0f2f5] py-[12px] ml-[36px] w-[629px] h-[40px] gap-[8px]">
         <span className="self-center">
           <img className="ml-[10px] " src={search} alt="The search icon" />

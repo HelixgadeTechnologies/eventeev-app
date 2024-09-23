@@ -17,7 +17,7 @@ import style from "./style/Sidebar.module.css";
 
 const EventSidebar = () => {
   return (
-    <div className="w-[20%] h-[100vh] bg-white border-r-2">
+    <div className="w-[280px] h-[100vh] bg-white border-r-2">
       <div className="p-4">
         <div className="mb-4">
           <span className="h-[56px] gap-[12px] flex items-center">
