@@ -39,7 +39,8 @@ const EventSidebar = () => {
                 to={"/event/dashboard"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={icon}
                   alt="icon"
@@ -55,7 +56,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={iconTwo}
                   alt="icon"
@@ -71,7 +73,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={iconThree}
                   alt="icon"
@@ -95,7 +98,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={googleD}
                   alt="icon"
@@ -111,7 +115,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={paypal}
                   alt="icon"
@@ -131,7 +136,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={iconFour}
                   alt="icon"
@@ -147,7 +153,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={icon6}
                   alt="icon"
@@ -163,7 +170,8 @@ const EventSidebar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive ? style.active : style.link
-                }>
+                }
+              >
                 <img
                   src={icon7}
                   alt="icon"
